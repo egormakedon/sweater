@@ -53,6 +53,8 @@
 	</dependencies>
 
 	<build>
+		<finalName>sweater</finalName>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
