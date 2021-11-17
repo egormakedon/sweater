@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Server address="localhost" port="8005" portOffset="0" shutdown="SHUTDOWN" utilityThreads="1" utilityThreadsAsDaemon="true">
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+
+  <GlobalNamingResources>
+    <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+              description="User database that can be updated and saved"
+              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+              pathname="conf/tomcat-users.xml" />
+  </GlobalNamingResources>
+
+  <Service name="Catalina">
+    <Executor name="threadPool" threadPriority="5" daemon="true" namePrefix="catalina-exec-"
+        maxThreads="200" minSpareThreads="50" maxIdleTime="60000" prestartminSpareThreads="true"/>
+
+    <Connector executor="threadPool"
+               port="8080" protocol="HTTP/1.1"
+               connectionTimeout="300000"
+               redirectPort="8443"/>
+
+    <Connector executor="threadPool"
+               port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               connectionTimeout="300000"
+               scheme="https" secure="true" SSLEnabled="true"
+               clientAuth="false" sslProtocol="TLS"
+               keystoreFile="conf/tomcat.keystore"
+               keystorePass="tomcat"/>
+
+    <Engine name="Catalina" defaultHost="localhost">
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+               resourceName="UserDatabase"/>
+      </Realm>
+
+      <Host name="localhost" appBase="webapps">
+        <Context docBase="sweater" path=""
+                 reloadable="false" unpackWAR="true" workDir="work/sweater"/>
+
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="localhost_access_log" suffix=".log"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b"/>
+      </Host>
+    </Engine>
+  </Service>
+</Server>
