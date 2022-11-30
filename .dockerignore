@@ -1,15 +1,7 @@
-.idea
-*.md
+**
 
-.git
-.gitignore
-
-*.log
-logs
-
-*.class
-target
-
-.dockerignore
-Dockerfile
-docker-compose.yaml
+!docker/
+!docker/**
+!src/
+!src/**
+!pom.xml

@@ -1,4 +1,7 @@
-.idea
+.DS_Store
+
+.idea/
+.idea_modules/
 *.iml
 
 *.class
@@ -10,6 +13,10 @@
 *.tar.gz
 *.rar
 
-out
-target
-logs
+bin/
+out/
+target/
+build/
+node_modules/
+dist/
+logs/
