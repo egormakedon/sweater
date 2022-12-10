@@ -41,6 +41,11 @@ services:
     volumes:
       - ./logs:/usr/local/tomcat/logs
     environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: sweaterdb
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres
+      SPRING_PROFILES_ACTIVE: prod
       CATALINA_OPTS: -Xms512m -Xmx2048m -XX:MaxPermSize=256m -server
       TZ: Europe/Minsk
       LANG: ru_RU.UTF-8

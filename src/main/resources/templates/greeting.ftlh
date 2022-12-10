@@ -10,7 +10,7 @@
 <body>
 	<input id="nameInputId" type="text">
 	<button onclick="submitName()">submit</button>
-	<p>Hello, {{name}}!</p>
+	<p>Hello, ${name}!</p>
 	<p>Go to the <a href="/">main</a> page.</p>
 
 	<script type="text/javascript" src="/resources/js/greeting.js"></script>
