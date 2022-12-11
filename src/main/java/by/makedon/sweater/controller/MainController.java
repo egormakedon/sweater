@@ -1,4 +1,4 @@
-package by.makedon.sweater.main;
+package by.makedon.sweater.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

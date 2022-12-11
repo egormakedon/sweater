@@ -8,6 +8,8 @@
 	<title>Main</title>
 </head>
 <body>
-	<p>Hello, this is main! Go to the <a href="/greeting">greeting</a> page.</p>
+	<div>
+		<p>Hello, this is main! Go to the <a href="/greeting">greeting</a> page.</p>
+	</div>
 </body>
 </html>

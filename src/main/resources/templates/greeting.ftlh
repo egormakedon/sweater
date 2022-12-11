@@ -8,10 +8,15 @@
 	<title>Greeting</title>
 </head>
 <body>
-	<input id="nameInputId" type="text">
-	<button onclick="submitName()">submit</button>
-	<p>Hello, ${name}!</p>
-	<p>Go to the <a href="/">main</a> page.</p>
+	<div>
+		<input id="nameInputId" type="text">
+		<button onclick="submitName()">submit</button>
+		<p>Hello, ${name}!</p>
+	</div>
+	<div>
+		<p>Go to the <a href="/messages">messages</a> page.</p>
+		<p>Go to the <a href="/">main</a> page.</p>
+	</div>
 
 	<script type="text/javascript" src="/resources/js/greeting.js"></script>
 </body>

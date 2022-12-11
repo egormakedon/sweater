@@ -1,7 +1,6 @@
 package by.makedon.sweater.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -11,8 +10,7 @@ import java.time.LocalDateTime;
  * @author Yahor Makedon
  */
 @MappedSuperclass
-@Setter
-@Getter
+@Data
 public abstract class AbstractBean implements BaseBean {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
