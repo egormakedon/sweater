@@ -19,6 +19,15 @@
 		</div>
 	</div>
 	<div>
+		<div>Filter by tag</div>
+		<div>
+			<form action="/messages" method="get" id="filterMessagesForm">
+				<input type="text" id="filterTagInputId" name="filterByTag" placeholder="Input message tag.">
+			</form>
+			<button type="submit" form="filterMessagesForm" value="Filter">Filter</button>
+		</div>
+	</div>
+	<div>
 		<div>Messages:</div>
 		<div>
 			<#list messages as message>

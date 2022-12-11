@@ -33,4 +33,11 @@ public class MessageServiceImpl implements MessageService {
 		log.info("Save message: {}", message);
 		return message;
 	}
+
+	@Override
+	public List<Message> getByTag(String tag) {
+		List<Message> messageList = messageRepository.findMessagesByTag(tag);
+		log.info("Find messages by '{}' tag: {}", tag, messageList);
+		return messageList;
+	}
 }
