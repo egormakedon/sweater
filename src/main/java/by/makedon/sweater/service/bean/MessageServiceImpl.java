@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Yahor Makedon
@@ -24,6 +25,11 @@ public class MessageServiceImpl implements MessageService {
 		List<Message> messageList = messageRepository.findAll();
 		log.info("Find all messages: {}", messageList);
 		return messageList;
+	}
+
+	@Override
+	public Optional<Message> getById(Long id) {
+		return messageRepository.findById(id);
 	}
 
 	@Transactional
