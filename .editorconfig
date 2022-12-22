@@ -12,15 +12,9 @@ trim_trailing_whitespace = true
 curly_bracket_next_line = false
 spaces_around_operators = true
 
-[*.{ts,js}]
+[*.js]
 tab_width = 2
 indent_size = 2
-indent_style = space
-quote_type = single
-
-[*.py]
-tab_width = 4
-indent_size = 4
 indent_style = space
 quote_type = single
 
